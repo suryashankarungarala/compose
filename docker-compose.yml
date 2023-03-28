@@ -1,0 +1,67 @@
+version: "3"
+services:
+  movie:
+    image: suryashankar598/movie:latest
+    deploy:
+      mode: replicated
+      replicas: 3  
+    ports:
+      - "8008:8000"
+    networks:
+      - "surya"
+    volumes:
+      - volumes1:/tmp/
+    
+    
+
+  bus:
+    image: suryashankar598/bus:latest
+    deploy:
+      mode: replicated
+      replicas: 3  
+    ports:
+      - "8007:8000"
+    networks:
+      - "surya"
+    volumes:
+      - volumes1:/tmp/
+    
+    
+  
+
+  train:
+    image: suryashankar598/train:latest
+    deploy:
+      mode: replicated
+      replicas: 6  
+    ports:
+      - "8006:8000"
+    networks:
+      - "surya"
+    volumes:
+      - volumes1:/tmp/
+    
+    
+ 
+  loan:
+    image: suryashankar598/loan:latest
+    deploy:
+      mode: replicated
+      replicas: 6  
+    ports:
+      - "8005:8000"
+    volumes:
+      - volumes1:/tmp/
+    
+networks:
+  surya:
+    driver: bridge
+volumes:
+  volumes1:
+    external: true  
+     
+        
+    
+    
+    
+       
