@@ -7,8 +7,6 @@ services:
       replicas: 3  
     ports:
       - "8008:8000"
-    networks:
-      - "surya"
     volumes:
       - volumes1:/tmp/
     
@@ -21,8 +19,6 @@ services:
       replicas: 3  
     ports:
       - "8007:8000"
-    networks:
-      - "surya"
     volumes:
       - volumes1:/tmp/
     
@@ -36,8 +32,6 @@ services:
       replicas: 2  
     ports:
       - "8006:8000"
-    networks:
-      - "surya"
     volumes:
       - volumes1:/tmp/
     
@@ -53,9 +47,7 @@ services:
     volumes:
       - volumes1:/tmp/
     
-networks:
-  surya:
-    driver: bridge
+
 volumes:
   volumes1:
     external: true  
