@@ -33,7 +33,7 @@ services:
     image: suryashankar598/train:latest
     deploy:
       mode: replicated
-      replicas: 6  
+      replicas: 2  
     ports:
       - "8006:8000"
     networks:
@@ -47,7 +47,7 @@ services:
     image: suryashankar598/loan:latest
     deploy:
       mode: replicated
-      replicas: 6  
+      replicas: 2  
     ports:
       - "8005:8000"
     volumes:
